@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://logos.cs.uic.edu/366/notes/mips%20quick%20tutorial.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>MIPS Quick Tutorial</title>
+<!-- ZoneLabs Privacy Insertion -->
+<script language="javascript" src=""></script>
+
+<meta content="MSHTML 6.00.2800.1226" name="GENERATOR"></head>
+<body bgcolor="#FFFFFF">
+<h2></h2>
+<center>
+  <h2>MIPS Architecture and Assembly Language Overview</h2>
+  <p><font size="-1">Adapted from: http://edge.mcs.dre.g.el.edu/GICL/people/sevy/architecture/MIPSRef(SPIM).html</font></p>
+  <div align="left">[<a href="http://logos.cs.uic.edu/366/notes/mips%20quick%20tutorial.htm#RegisterDescription">Register Description</a>] 
+    [<a href="http://logos.cs.uic.edu/366/notes/mips%20quick%20tutorial.htm#IOSystemCalls">I/O Description</a>]<br>
+  </div>
+</center>
+<p></p>
+<hr>
+
+<p></p>
+<h3>Data Types and Literals</h3>
+<blockquote>
+  <p>Data types: </p>
+  <ul>
+    <li>Instructions are all 32 bits </li>
+    <li>byte(8 bits), halfword (2 bytes), word (4 bytes) </li>
+    <li>a character requires 1 byte of storage </li>
+    <li>an integer requires 1 word (4 bytes) of storage </li>
+  </ul>
+  <p>Literals: </p>
+  <ul>
+    <li>numbers entered as is. <u>e.g.</u> 4 </li>
+    <li>characters enclosed in single quotes. <u>e.g.</u> 'b' </li>
+    <li>strings enclosed in double quotes. <u>e.g.</u> "A string" </li>
+  </ul>
+</blockquote>
+<p></p>
+<h3><a name="RegisterDescription"></a>Registers</h3>
+<p></p>
+<ul>
+  <li>32 general-purpose registers 
+  </li><li>register preceded by $ in assembly language instruction<br>
+    two formats for addressing: 
+    <ul>
+      <li>using register number <u>e.g.</u> $0 through $31 
+      </li><li>using equivalent names <u>e.g.</u> $t1, $sp </li>
+    </ul>
+  </li><li>special registers Lo and Hi used to store result of multiplication and division 
+    <ul>
+      <li>not directly addressable; contents accessed with special instruction 
+        mfhi ("move from Hi") and mflo ("move from Lo") </li>
+    </ul>
+  </li><li>stack grows from high memory to low memory </li>
+</ul>
+
+      <div align="left"> 
+        <table border="1" width="661" align="center">
+        </table>
+      </div>
+      <div align="left"> 
+        <table border="1" width="661" align="center">
+        </table>
+      </div>
+  
+    <div align="left"> 
+      
+        This is from Figure 9.9 in the Goodman&amp;Miller text<br><table border="1" width="661" align="center">
+        <tbody><tr> 
+          <th width="69">Register<br>
+            Number 
+          </th><th width="92">Alternative <br>
+            Name 
+          </th><th width="412">Description 
+        </th></tr><tr> 
+          <td width="69"> 
+            <div align="center">0 </div>
+          </td><td width="92"> 
+            <div align="center">zero</div>
+          </td><td width="412">the value 0 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center"><font color="#666666">1 </font></div>
+          </td><td width="92"> 
+            <div align="center"><font color="#666666">$at </font></div>
+          </td><td width="412"><font color="#666666">(<b>a</b>ssembler <b>t</b>emporary) 
+            reserved by the assembler </font> 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">2-3 </div>
+          </td><td width="92"> 
+            <div align="center">$v0 - $v1 </div>
+          </td><td width="412">(<b>v</b>alues) from expression evaluation and function 
+            results 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">4-7 </div>
+          </td><td width="92"> 
+            <div align="center">$a0 - $a3 </div>
+          </td><td width="412">(<b>a</b>rguments) First four parameters for subroutine.<br>
+            Not preserved across procedure calls 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">8-15 </div>
+          </td><td width="92"> 
+            <div align="center">$t0 - $t7 </div>
+          </td><td width="412">(<b>t</b>emporaries) Caller saved if needed. Subroutines 
+            can use w/out saving.<br>
+            Not preserved across procedure calls 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">16-23 </div>
+          </td><td width="92"> 
+            <div align="center">$s0 - $s7 </div>
+          </td><td width="412">(<b>s</b>aved values) - Callee saved. <br>
+            <font size="-1">A subroutine using one of these must save original 
+            and restore it before exiting.</font><br>
+            Preserved across procedure calls 
+        </td></tr><tr> 
+          <td width="69" height="48"> 
+            <div align="center">24-25 </div>
+          </td><td width="92" height="48"> 
+            <div align="center">$t8 - $t9 </div>
+          </td><td width="412" height="48">(<b>t</b>emporaries) Caller saved if needed. 
+            Subroutines can use w/out saving.<br>
+            <font size="-1">These are in addition to $t0 - $t7 above.</font><br>
+            Not preserved across procedure calls. 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">26-27 </div>
+          </td><td width="92"> 
+            <div align="center">$k0 - $k1 </div>
+          </td><td width="412">reserved for use by the interrupt/trap handler 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">28 </div>
+          </td><td width="92"> 
+            <div align="center">$gp </div>
+          </td><td width="412"><b>g</b>lobal <b>p</b>ointer. <br>
+            Points to the middle of the 64K block of memory in the static data 
+            segment. 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">29 </div>
+          </td><td width="92"> 
+            <div align="center">$sp </div>
+          </td><td width="412"><b>s</b>tack <b>p</b>ointer <br>
+            Points to last location on the stack. 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">30 </div>
+          </td><td width="92"> 
+            <div align="center">$s8/$fp</div>
+          </td><td width="412"><b>s</b>aved value / <b>f</b>rame <b>p</b>ointer<br>
+            Preserved across procedure calls 
+        </td></tr><tr> 
+          <td width="69"> 
+            <div align="center">31 </div>
+          </td><td width="92"> 
+            <div align="center">$ra </div>
+          </td><td width="412"><b>r</b>eturn <b>a</b>ddress 
+      </td></tr></tbody></table>
+    
+</div>
+  
+<blockquote>
+  <div align="left"><br>
+    See also Britton section 1.9, Sweetman section 2.21, Larus Appendix section 
+    A.6</div>
+</blockquote>
+<p></p>
+<hr>
+
+<h2>Program Structure</h2>
+<blockquote>
+<ul>
+    <li>just plain text file with data declarations, program code (name of file 
+      should end in suffix .s to be used with SPIM simulator) </li>
+    <li>data declaration section followed by program code section </li>
+  </ul>
+  <h3>Data Declarations</h3>
+  <ul>
+    <li>placed in section of program identified with assembler directive <b>.data</b> 
+    </li>
+    <li>declares variable names used in program; storage allocated in main memory 
+      (RAM) </li>
+  </ul>
+  <h3>Code</h3>
+  <ul>
+    <li>placed in section of text identified with assembler directive <b>.text</b> 
+    </li>
+    <li>contains program code (instructions) </li>
+    <li>starting point for code e.g.ecution given label <b>main:</b> </li>
+    <li>ending point of main code should use exit system call (see below under 
+      System Calls) </li>
+  </ul>
+  <h3>Comments</h3>
+  <ul>
+    <li>anything following # on a line <br>
+      # This stuff would be considered a comment</li>
+    <li>Template for a MIPS assembly language program: 
+      <blockquote>
+        <pre># Comment giving name of program and description of function
+# Template.s
+# Bare-bones outline of MIPS assembly language program
+
+           .data       # variable declarations follow this line
+                       # ...
+														
+           .text       # instructions follow this line	
+																	
+main:                  # indicates start of code (first instruction to execute)
+                       # ...
+									
+# End of program, leave a blank line afterwards to make SPIM happy
+</pre>
+      </blockquote>
+    </li>
+  </ul>
+</blockquote>
+<p></p>
+<hr>
+
+<p></p>
+<h2>Data Declarations</h2>
+<blockquote>
+  <p>format for declarations: </p>
+</blockquote>
+<ul>
+  <blockquote>
+    <pre>name:	storage_type	value(s)	<br></pre>
+  </blockquote>
+  <ul>
+    <li>create storage for variable of specified type with given name and specified 
+      value </li>
+    <li>value(s) usually gives initial value(s); for storage type .space, gives 
+      number of spaces to be allocated </li>
+  </ul>
+</ul>
+<blockquote>
+  <p>Note: labels always followed by colon ( : ) </p>
+  <blockquote>
+    <pre>example
+	
+var1:		.word	3	# create a single integer variable with initial value 3
+array1:		.byte	'a','b'	# create a 2-element character array with elements initialized
+				#   to  a  and  b
+array2:		.space	40	# allocate 40 consecutive bytes, with storage uninitialized
+				#   could be used as a 40-element character array, or a
+				#   10-element integer array; a comment should indicate which!	</pre>
+  </blockquote>
+</blockquote>
+<p></p>
+<hr>
+
+<p></p>
+<p></p>
+<h3>Load / Store Instructions</h3>
+<blockquote>
+<ul>
+    <li>RAM access only allowed with load and store instructions </li>
+    <li>all other instructions use register operands </li>
+  </ul>
+  <p><u>load:</u> </p>
+  <blockquote>
+    <pre>	lw	register_destination, RAM_source</pre>
+  </blockquote>
+</blockquote>
+<ul>
+  <ul>
+    <blockquote> 
+      <blockquote>
+        <p>#copy word (4 bytes) at source RAM location to destination register. 
+        </p>
+      </blockquote>
+    </blockquote>
+  </ul>
+  <blockquote>
+    <pre>	lb	register_destination, RAM_source</pre>
+  </blockquote>
+</ul>
+<blockquote> 
+  <ul>
+    <blockquote> 
+      <blockquote>
+        <p>#copy byte at source RAM location to low-order byte of destination 
+          register,<br>
+          # and sign-e.g.tend to higher-order bytes </p>
+      </blockquote>
+    </blockquote>
+  </ul>
+  <p><u>store word:</u> </p>
+  <blockquote>
+    <pre>	sw	register_source, RAM_destination</pre>
+  </blockquote>
+</blockquote>
+<ul>
+  <blockquote> 
+    <blockquote> 
+      <blockquote>
+        <p> #store word in source register into RAM destination </p>
+      </blockquote>
+    </blockquote>
+    <pre>	sb	register_source, RAM_destination</pre>
+  </blockquote>
+</ul>
+<blockquote> 
+  <blockquote> 
+    <blockquote> 
+      <blockquote>
+        <p>#store byte (low-order) in source register into RAM destination </p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+  <p><u>load immediate:</u> </p>
+  <blockquote>
+    <pre>	li	register_destination, value</pre>
+  </blockquote>
+</blockquote>
+<ul>
+  <blockquote> 
+    <blockquote> 
+      <blockquote>
+        <p> #load immediate value into destination register </p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</ul>
+<blockquote>
+  <p>&nbsp;</p>
+  <pre>example:
+	.data
+var1:	.word	23		# declare storage for var1; initial value is 23
+
+	.text
+__start:
+	lw	$t0, var1		# load contents of RAM location into register $t0:  $t0 = var1
+	li	$t1, 5		#  $t1 = 5   ("load immediate")
+	sw	$t1, var1		# store contents of register $t1 into RAM:  var1 = $t1
+	done
+
+
+</pre>
+</blockquote>
+<p></p>
+<hr>
+
+<p></p>
+<h3>Indirect and Based Addressing</h3>
+<blockquote>
+<ul>
+    <li>Used only with load and store instructions </li>
+  </ul>
+  <p><u>load address:</u> </p>
+  <pre>	la	$t0, var1<br></pre>
+  <ul>
+    <li>copy RAM address of var1 (presumably a label defined in the program) into 
+      register $t0 </li>
+  </ul>
+  <p><u>indirect addressing:</u> </p>
+  <pre>	lw	$t2, ($t0)</pre>
+  <ul>
+    <li>load word at RAM address contained in $t0 into $t2 </li>
+  </ul>
+  <pre>	sw	$t2, ($t0)</pre>
+  <ul>
+    <li>store word in register $t2 into RAM at address contained in $t0 </li>
+  </ul>
+  <p><u>based or indexed addressing:</u> </p>
+  <pre>	lw	$t2, 4($t0)</pre>
+  <ul>
+    <li>load word at RAM address ($t0+4) into register $t2 </li>
+    <li>"4" gives offset from address in register $t0 </li>
+  </ul>
+  <pre>	sw	$t2, -12($t0)</pre>
+  <ul>
+    <li>store word in register $t2 into RAM at address ($t0 - 12) </li>
+    <li>negative offsets are fine </li>
+  </ul>
+  <blockquote>
+    <p>Note: based addressing is especially useful for: </p>
+  </blockquote>
+  <ul>
+    <li>arrays; access elements as offset from base address </li>
+    <li>stacks; easy to access elements at offset from stack pointer or frame 
+      pointer </li>
+  </ul>
+  <p>&nbsp;</p>
+  <pre>example
+
+		.data
+array1:		.space	12		#  declare 12 bytes of storage to hold array of 3 integers
+		.text
+__start:	la	$t0, array1		#  load base address of array into register $t0
+		li	$t1, 5		#  $t1 = 5   ("load immediate")
+		sw $t1, ($t0)		#  first array element set to 5; indirect addressing
+		li $t1, 13		#   $t1 = 13
+		sw $t1, 4($t0)		#  second array element set to 13
+		li $t1, -7		#   $t1 = -7
+		sw $t1, 8($t0)		#  third array element set to -7
+		done
+</pre>
+</blockquote>
+<p></p>
+<hr>
+
+<p></p>
+<h3>Arithmetic Instructions</h3>
+<p></p>
+<ul>
+  <li>most use 3 operands 
+  </li><li>all operands are registers; no RAM or indirect addressing 
+  </li><li>operand size is word (4 bytes) </li></ul>
+<p></p>
+<pre>		add	$t0,$t1,$t2	#  $t0 = $t1 + $t2;   add as signed (2's complement) integers
+		sub	$t2,$t3,$t4	#  $t2 = $t3 Ð $t4
+		addi	$t2,$t3, 5	#  $t2 = $t3 + 5;   "add immediate" (no sub immediate)
+		addu	$t1,$t6,$t7	#  $t1 = $t6 + $t7;   add as unsigned integers
+		subu	$t1,$t6,$t7	#  $t1 = $t6 + $t7;   subtract as unsigned integers
+
+		mult	$t3,$t4		#  multiply 32-bit quantities in $t3 and $t4, and store 64-bit
+					#  result in special registers Lo and Hi:  (Hi,Lo) = $t3 * $t4
+		div	$t5,$t6		#  Lo = $t5 / $t6   (integer quotient)
+					#  Hi = $t5 mod $t6   (remainder)
+		mfhi	$t0		#  move quantity in special register Hi to $t0:   $t0 = Hi
+		mflo	$t1		#  move quantity in special register Lo to $t1:   $t1 = Lo
+					#  used to get at result of product or quotient
+
+		move	$t2,$t3	#  $t2 = $t3
+
+
+</pre>
+<p></p>
+<hr>
+
+<p></p>
+<h3>Control Structures</h3>
+<blockquote>
+  <p><u>Branches</u> </p>
+  <ul>
+    <li>comparison for conditional branches is built into instruction </li>
+  </ul>
+  <pre>		b	target		#  unconditional branch to program label target
+		beq	$t0,$t1,target	#  branch to target if  $t0 = $t1
+		blt	$t0,$t1,target	#  branch to target if  $t0 &lt; $t1
+		ble	$t0,$t1,target	#  branch to target if  $t0 &lt;= $t1
+		bgt	$t0,$t1,target	#  branch to target if  $t0 &gt; $t1
+		bge	$t0,$t1,target	#  branch to target if  $t0 &gt;= $t1
+		bne	$t0,$t1,target	#  branch to target if  $t0 &lt;&gt; $t1
+</pre>
+  <p><u>Jumps</u> </p>
+  <pre>		j	target	#  unconditional jump to program label target<br>		jr	$t3		#  jump to address contained in $t3 ("jump register")<br></pre>
+  <p><u>Subroutine Calls</u> </p>
+  <p>subroutine call: "jump and link" instruction </p>
+  <pre>	jal	sub_label	#  "jump and link"</pre>
+  <ul>
+    <li>copy program counter (return address) to register $ra (return address 
+      register) </li>
+    <li>jump to program statement at sub_label </li>
+  </ul>
+  <p>subroutine return: "jump register" instruction </p>
+  <pre>	jr	$ra	#  "jump register"</pre>
+  <ul>
+    <li>jump to return address in $ra (stored by jal instruction) </li>
+  </ul>
+  <p>Note: return address stored in register $ra; if subroutine will call other 
+    subroutines, or is recursive, return address should be copied from $ra onto 
+    stack to preserve it, since jal always places return address in this register 
+    and hence will overwrite previous value </p>
+</blockquote>
+<p></p>
+<hr>
+<p></p>
+<h3><a name="IOSystemCalls"></a>System Calls and I/O (SPIM Simulator)</h3>
+<p></p>
+<ul>
+  <li>used to read or print values or strings from input/output window, and indicate 
+    program end 
+  </li><li>use <b>syscall</b> operating system routine call </li>
+  <li>first supply appropriate values in registers $v0 and $a0-$a1 </li>
+  <li>result value (if any) returned in register $v0 </li>
+</ul>
+<blockquote>
+<p>The following table lists the possible <b>syscall</b> services. </p>
+</blockquote>
+<table border="1" align="center">
+  <tbody><tr> 
+    <th width="80">Service 
+    </th><th width="54"> Code<br>
+      in $v0 
+    </th><th width="271">Arguments 
+    </th><th width="172">Results 
+  </th></tr><tr> 
+    <td width="80">print_int 
+    </td><td width="54"> 
+      <div align="center">1</div>
+    </td><td width="271">$a0 = integer to be printed 
+    </td><td width="172"> 
+  </td></tr><tr> 
+    <td width="80">print_float 
+    </td><td width="54"> 
+      <div align="center">2</div>
+    </td><td width="271">$f12 = float to be printed 
+    </td><td width="172"> 
+  </td></tr><tr> 
+    <td width="80">print_double 
+    </td><td width="54"> 
+      <div align="center">3</div>
+    </td><td width="271">$f12 = double to be printed 
+    </td><td width="172"> 
+  </td></tr><tr> 
+    <td width="80">print_string 
+    </td><td width="54"> 
+      <div align="center">4</div>
+    </td><td width="271">$a0 = address of string in memory 
+    </td><td width="172"> 
+  </td></tr><tr> 
+    <td width="80">read_int 
+    </td><td width="54"> 
+      <div align="center">5</div>
+    </td><td width="271"> 
+    </td><td width="172">integer returned in $v0 
+  </td></tr><tr> 
+    <td width="80">read_float 
+    </td><td width="54"> 
+      <div align="center">6</div>
+    </td><td width="271"> 
+    </td><td width="172">float returned in $v0 
+  </td></tr><tr> 
+    <td width="80">read_double 
+    </td><td width="54"> 
+      <div align="center">7</div>
+    </td><td width="271"> 
+    </td><td width="172">double returned in $v0 
+  </td></tr><tr> 
+    <td width="80">read_string 
+    </td><td width="54"> 
+      <div align="center">8</div>
+    </td><td width="271">$a0 = memory address of string input buffer<br>
+      $a1 = length of string buffer (n) 
+    </td><td width="172"> 
+  </td></tr><tr> 
+    <td width="80">sbrk 
+    </td><td width="54"> 
+      <div align="center">9</div>
+    </td><td width="271">$a0 = amount 
+    </td><td width="172">address in $v0 
+  </td></tr><tr> 
+    <td width="80">exit 
+    </td><td width="54"> 
+      <div align="center">10</div>
+    </td><td width="271"> 
+    </td><td width="172"> 
+</td></tr></tbody></table>
+<ul>
+  <ul>
+    <li>The print_string service expects the address to start a null-terminated 
+      character string. The directive <b>.asciiz</b> creates a null-terminated 
+      character string. </li>
+    <li>The read_int, read_float and read_double services read an entire line 
+      of input up to and including the newline character. </li>
+    <li>The read_string service has the same semantices as the UNIX library routine 
+      fgets. 
+      <ul>
+        <li>It reads up to n-1 characters into a buffer and terminates the string 
+          with a null character. </li>
+        <li>If fewer than n-1 characters are in the current line, it reads up 
+          to and including the newline and terminates the string with a null character. 
+        </li>
+      </ul>
+    </li>
+    <li>The sbrk service returns the address to a block of memory containing n 
+      additional bytes. This would be used for dynamic memory allocation. </li>
+    <li>The exit service stops a program from running.</li>
+  </ul>
+</ul>
+<p></p>
+<blockquote>
+  <pre>e.g.   Print out integer value contained in register $t2<br>
+		li	$v0, 1			# load appropriate system call code into register $v0;
+						# code for printing integer is 1
+		move	$a0, $t2		# move integer to be printed into $a0:  $a0 = $t2
+		syscall				# call operating system to perform operation<br>
+
+e.g.   Read integer value, store in RAM location with label int_value (presumably declared in data section)<br>
+		li	$v0, 5			# load appropriate system call code into register $v0;
+						# code for reading integer is 5
+		syscall				# call operating system to perform operation
+		sw	$v0, int_value		# value read from keyboard returned in register $v0;
+						# store this in desired location
+
+e.g.   Print out string (useful for prompts)
+
+		.data
+string1		.asciiz	"Print this.\n"		# declaration for string variable, 
+						# .asciiz directive makes string null terminated
+
+		.text
+main:		li	$v0, 4			# load appropriate system call code into register $v0;
+						# code for printing string is 4
+		la	$a0, string1		# load address of string to be printed into $a0
+		syscall				# call operating system to perform print operation
+<br>
+<u>e.g.</u> To indicate end of program, use <b>exit</b> system call; thus last lines of program should be:
+
+		li	$v0, 10		# system call code for exit = 10
+		syscall				# call operating sys
+
+
+</pre>
+</blockquote>
+
+
+</body></html>
