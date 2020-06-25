@@ -1,0 +1,79 @@
+.
+├── assembly
+│   ├── assemblylanguageprogdoc.pdf
+│   ├── assembly_tut.ppt
+│   ├── aula11.pdf
+│   ├── cap3hp.pdf
+│   ├── ch3_arq.pdf
+│   ├── Conjunto reduzido de instruções MIPS.pdf
+│   ├── exemplo01.asm
+│   ├── Mars4_5.jar
+│   ├── mips.pdf
+│   ├── MIPS-Quick-Tutorial.html
+│   ├── SPP-aula04-Conjunto_de_Instrucoes_MIPS_3.pdf
+│   └── Tutorial MARS.pdf
+├── aulas
+│   ├── Aula 01 - Introdução à disciplina e classes de aplicações.pdf
+│   ├── Aula 02 - Componentes de um computador.pdf
+│   ├── Aula 03 - Semicondutores e processo de fabricação.pdf
+│   ├── Aula 04 - Avaliação de desempenho.pdf
+│   ├── Aula 05 - Introdução a instruções.pdf
+│   ├── Aula 06 - Tradução de instruções básicas.pdf
+│   ├── Aula 10 - Instruções de tomada de decisão if-then-else.pdf
+│   ├── Aula 11 - Instruções de tomada de decisão while, for, repeat.pdf
+│   ├── Aula 12 - Suporte a chamada de procedimentos.pdf
+│   ├── Aula 13 - Tradução e inicialização de um programa.pdf
+│   ├── Aula 15 - Processadores monociclo.pdf
+│   ├── Aula 16 - Processadores pipeline.pdf
+│   ├── Aula 17 - Processadores com despacho múltiplo de instruções.pdf
+│   ├── Aula 18 - Processadores multithread e multicore.pdf
+│   ├── Aula 23 - Princípios de localidade e hierarquia de memória.pdf
+│   ├── Aula 24 - Cache com mapeamento direto.pdf
+│   ├── Aula 25 - Caches associativas e associativas por conjunto.pdf
+│   ├── Aula 26 - Avaliação de desempenho de caches.pdf
+│   ├── Aula 27 - Memória virtual.pdf
+│   ├── Aula 29 - Memórias e dependabilidade.pdf
+│   ├── Aula 30 - Memórias modernas.pdf
+│   └── Aula XX - Multiprocessadores, multicomputadores, processadores e plataformas modernas.pdf
+├── exercicios
+│   ├── Exemplos_área_2.pdf
+│   ├── Gabarito_área_3.pdf
+│   ├── Questões_área_2.pdf
+│   └── Questões_área_3.pdf
+├── img
+│   ├── barramento.png
+│   ├── dram.png
+│   ├── hierarquia_de_memoria.png
+│   ├── multicore_com_blocked_multithreading.jpg
+│   ├── multicore_com_interleaved_multithreading.jpg
+│   ├── multicore_com_simultaneous_multithreading.jpg
+│   ├── multicore_superescalar.jpg
+│   ├── multiprocessador_numa.jpg
+│   ├── multiprocessador_uma.jpg
+│   ├── sram_dram.png
+│   ├── superescalar_com_interleaved_multithreading.jpg
+│   └── superescalar.jpg
+├── LICENSE
+├── livros
+│   └── Organização Estruturada de Computadores.pdf
+├── provas
+│   ├── 2014_02 - Exemplo prova 2 - Gabarito.pdf
+│   ├── 2014_02 - Exemplo prova 2.pdf
+│   ├── 2014_02 - Prova 1 - Gabarito.pdf
+│   ├── 2014_02 - Prova 1.pdf
+│   ├── 2014_02 - Prova 2 - Gabarito.pdf
+│   ├── 2014_02 - Prova 2.pdf
+│   ├── 2014_02 - Prova 3 - Gabarito.pdf
+│   ├── 2014_02 - Prova 3.pdf
+│   ├── 2015_01 - Prova 1 - Gabarito.pdf
+│   ├── 2015_01 - Prova 1.pdf
+│   ├── 2015_01 - Prova 2 - Gabarito.pdf
+│   ├── 2015_01 - Prova 2.pdf
+│   ├── 2015_01 - Prova 3 - Gabarito.pdf
+│   └── 2015_01 - Prova 3.pdf
+├── README.md
+├── resumos
+│   └── aula_01-tipos_de_computadores-e-memoria.md
+└── tree.txt
+
+7 directories, 69 files
