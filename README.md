@@ -10,8 +10,7 @@
 
 #### Compontes Básicos
 - Introdução à disciplina e classes de aplicações
-  - [Aula]()
-  - [Resumo]()
+  - [aula]() e [resumo]()
 - Componentes de um computador
   - [Aula]()
   - [Resumo]()
