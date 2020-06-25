@@ -1,22 +1,26 @@
+## Barramentos
+
+<img src="../img/barramento.png" align="center" height=auto width=70%/>
+
+---
+
 ## Tipos de computadores
-
 1. Desktops 
-2. Servidores 
-3. Embarcados 
-
+2. Servidores
+3. Embarcados
  
-## Desktop 
-- Para um único usuário; 
-- O foco dos Desktops é o desempenho sequencial; 
-- Executam SW independentes; 
+### Desktop 
+- Para um único usuário
+- O foco dos Desktops é o desempenho sequencial
+- Executam SW independentes
 
-## Servidores 
-- O foco dos servidores é a vazão de dados; 
-- Também são chamados de mainframes, minicomputadores ou supercomputadores; 
-- Projetados para trabalhos específicos complexos ou para várias tarefas ao mesmo tempo; 
-- Dão grande enfase a estabilidade, já que uma falha é mais prejudicial do que num desktop; 
+### Servidores 
+- O foco dos servidores é a vazão de dados
+- Também são chamados de mainframes, minicomputadores ou supercomputadores
+- Projetados para trabalhos específicos complexos ou para várias tarefas ao mesmo tempo
+- Dão grande enfase a estabilidade, já que uma falha é mais prejudicial do que num desktop
 
-## Embedded 
+### Embedded 
 - Foco de computadores embarcados/embutidos são:  a especialização. 
 - Tem baixo consumo de energia; 
 
@@ -50,6 +54,13 @@
 
 ---
 
-## Barramentos
+#### Author
+<a href="mailto:brunocampos01@gmail.com" target="_blank"><img class="" src="https://github.com/brunocampos01/devops/blob/master/images/gmail.png" width="28"></a>
+<a href="https://github.com/brunocampos01" target="_blank"><img class="ai-subscribed-social-icon" src="https://github.com/brunocampos01/devops/blob/master/images/github.png" width="30"></a>
+<a href="https://www.linkedin.com/in/brunocampos01/" target="_blank"><img class="ai-subscribed-social-icon" src="https://github.com/brunocampos01/devops/blob/master/images/linkedin.png" width="30"></a>
+Bruno Aurélio Rôzza de Moura Campos 
 
-<img src="../img/barramento.png" align="center" height=auto width=70%/>
+---
+
+#### Copyright
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br/>
