@@ -12,74 +12,53 @@
 - Introdução à disciplina e classes de aplicações
   - [aula]() e [resumo]()
 - Componentes de um computador
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Semicondutores e processo de fabricação
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Avaliação de desempenho
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 
 #### Assembly
 - Introdução a instruções
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Tradução de instruções básicas
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Instruções de tomada de decisão if-then-else
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Instruções de tomada de decisão while, for, repeat
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Suporte a chamada de procedimentos
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Tradução e inicialização de um programa
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 
 #### Processador
 - Processadores monociclo
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Processadores pipeline
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Processadores com despacho múltiplo de instruções
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Processadores multithread e multicore
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Multiprocessadores, multicomputadores, processadores e plataformas modernas
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 
 #### Memória
 - Princípios de localidade e hierarquia de memória
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Cache com mapeamento direto
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Caches associativas e associativas por conjunto
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Avaliação de desempenho de caches
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Memória virtual
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Memórias e dependabilidade
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 - Memórias modernas
-  - [Aula]()
-  - [Resumo]()
+  - [aula](aulas/) e [resumo](resumos/)
 
 ---
 
