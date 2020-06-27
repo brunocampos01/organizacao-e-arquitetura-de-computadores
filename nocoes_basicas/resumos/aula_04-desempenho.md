@@ -11,10 +11,13 @@
 ## Conceitos importantes 
 - **Tempo de execução de um programa**: Medido em segundos 
 - **Tempo de resposta** = CPU + memória + HD + E/S 
-<br/>
+
 É o tempo total, desde o início até o fim do programa 
+
 - **Tempo de execução de CPU** = tempo do usuário + tempo do sistema 
+
 - **Tempo de espera** = por dispositivos ou memória 
+
 - **Tempo de ciclo de relógio** = Período (T), dado em segundos/ciclo
   - Exemplo) 250 Pico segundos é igual a 4 GHz  
 
