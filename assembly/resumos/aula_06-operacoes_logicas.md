@@ -85,8 +85,8 @@ Para isso, será preciso executar 4 passos.
 Depois
 
 |   |   |   |   |   |   |   |  Útima posição    |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |  Temp_2   | 
+|---|---|---|---|---|---|---|-------------------|
+|   |   |   |   |   |   |  Temp_2 |             | 
 
 
 2. Deslocar o conteúdo de dentro do array sempre 2 campos (words) para a esquerda. 

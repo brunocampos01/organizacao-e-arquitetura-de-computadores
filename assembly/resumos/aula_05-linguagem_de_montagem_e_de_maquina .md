@@ -22,25 +22,18 @@ Exemplo de conjunto de instruções:
 <br/>
 <br/>
 <br/>
+
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+
 
 ## Linguagem de máquina 
 - É a linguagem mais primitiva de um computador 
 - Instruções são passadas para o hardware através de sequências de bits 
 - Cada família de computadores possui sua própria linguagem de máquina 
 - A linguagem de máquina entendida por um processador é definida por sua ISA (Instruction Set Architecture). 
-<br/>
-OBS: dois computadores com a mesma ISA não tem necessariamente a mesma implementação/organização de hardware. 
+- Dois computadores com a mesma ISA não tem necessariamente a mesma implementação/organização de hardware. 
 
 Exemplo) 
 
@@ -73,7 +66,7 @@ Características:
   - T: temporários 
   - S: temporários salvos (variáveis) 
 
-<img src="../../img/05.05.png" align="center" height=auto width=70%/>
+<img src="../../img/05.05.png" align="center" height=auto width=95%/>
 
 - Cada instrução do MIPS realiza somente 1 operação 
 - Cada instrução exige 3 operandos. Isso faz com que o HW mantenha a simplicidade e ilustra o 1 princípio:
