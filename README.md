@@ -1,5 +1,7 @@
 # Organização e Arquitetura de Computadores
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/612c5669972140c5a6a9e8380c374834)](https://app.codacy.com/manual/brunocampos01/organizacao-e-arquitetura-de-computadores?utm_source=github.com&utm_medium=referral&utm_content=brunocampos01/organizacao-e-arquitetura-de-computadores&utm_campaign=Badge_Grade_Dashboard)
+
 # Banco de Dados 
 
 <img src="images/image_bd.png" width="10%" height="10%" align="center" valign="center"/> 
