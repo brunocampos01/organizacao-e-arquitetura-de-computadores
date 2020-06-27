@@ -5,6 +5,7 @@
 ![License](https://img.shields.io/badge/UFSC-Organiza%C3%A7%C3%A3o%20e%20Arquitetura%20de%20Computadores-red?style=flat-square)
 
 ### Noções Básicas
+- [Tipos de computadores](nocoes_basicas/)
 - [Componentes de um computador](nocoes_basicas/)
 - [Semicondutores e processo de fabricação](nocoes_basicas/)
 - [Avaliação de desempenho](nocoes_basicas/)
