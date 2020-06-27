@@ -13,7 +13,6 @@
 - **Tempo de resposta** = CPU + memória + HD + E/S 
 <br/>
 É o tempo total, desde o início até o fim do programa 
- 
 - **Tempo de execução de CPU** = tempo do usuário + tempo do sistema 
 - **Tempo de espera** = por dispositivos ou memória 
 - **Tempo de ciclo de relógio** = Período (T), dado em segundos/ciclo
@@ -31,7 +30,7 @@
 
 **OBS** 
 > A única medida completa e confiável do desempenho de um computador é o tempo. 
-<br/>
+>
 > Perfilamento  (benchmarks) -  usados para comparar computadores 
 
 ---
