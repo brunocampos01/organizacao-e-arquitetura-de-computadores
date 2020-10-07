@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/612c5669972140c5a6a9e8380c374834)](https://app.codacy.com/manual/brunocampos01/organizacao-e-arquitetura-de-computadores?utm_source=github.com&utm_medium=referral&utm_content=brunocampos01/organizacao-e-arquitetura-de-computadores&utm_campaign=Badge_Grade_Dashboard)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg?style=flat-square)
-![License](https://img.shields.io/badge/UFSC-Organiza%C3%A7%C3%A3o%20e%20Arquitetura%20de%20Computadores-red?style=flat-square)
+![License](https://img.shields.io/badge/UFSC-Organiza%C3%A7%C3%A3o%20e%20Arquitetura%20de%20Computadores-blue?style=flat-square)
 
 ### Noções Básicas
 - [Tipos de computadores](nocoes_basicas/)
