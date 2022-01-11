@@ -11,6 +11,8 @@
 
 ---
 
+<br/>
+
 ### Assembly
 - [Introdução a instruções](assembly/)
 - [Tradução de instruções básicas](assembly/)
@@ -21,6 +23,8 @@
 
 ---
 
+<br/>
+
 ### Processador
 - [Processadores monociclo](processador/)
 - [Processadores pipeline](processador/)
@@ -29,6 +33,8 @@
 - [Multiprocessadores, multicomputadores, processadores e plataformas modernas](processador/)
 
 ---
+
+<br/>
 
 ### Memória
 - [Princípios de localidade e hierarquia de memória](memoria/)
@@ -40,6 +46,8 @@
 - [Memórias modernas](memoria/)
 
 ---
+
+<br/>
 
 ### Livros de Referência
 - [Organização Estruturada de Computadores - Tanenbaum](livros/)
